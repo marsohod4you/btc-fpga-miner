@@ -1,0 +1,18 @@
+Analysis & Synthesis Status : Successful - Mon Dec 19 20:45:05 2016
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : xxx
+Top-level Entity Name : sha256_test
+Family : Cyclone IV GX
+Total logic elements : 30,615
+    Total combinational functions : 30,103
+    Dedicated logic registers : 512
+Total registers : 512
+Total pins : 258
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0
