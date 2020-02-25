@@ -255,6 +255,22 @@ module shifter_32b # (
 	genvar i;
 
 	generate
+`ifdef SIM
+			for (i = 0; i < LENGTH; i = i + 1) begin : TAPS
+				reg [31:0] r;
+				wire [31:0] prev;
+
+				if (i == 0)
+					assign prev = val_in;
+				else
+					assign prev = TAPS[i-1].r;
+
+				always @ (posedge clk)
+					r <= prev;
+			end
+
+			assign val_out = TAPS[LENGTH-1].r;
+`else
 		if (LENGTH >= 4)
 		begin
 			altshift_taps # (.number_of_taps(1), .tap_distance(LENGTH), .width(32)) shifttaps
@@ -277,6 +293,7 @@ module shifter_32b # (
 
 			assign val_out = TAPS[LENGTH-1].r;
 		end
+`endif
 	endgenerate
 
 endmodule
