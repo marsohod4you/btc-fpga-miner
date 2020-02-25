@@ -163,7 +163,7 @@ module fpgaminer_top (osc_clk, RxD, TxD
 		begin
 			// TODO: Find a more compact calculation for this
 			if (LOOP == 1)
-                                golden_nonce <= nonce - 32'd133; //32'd131;
+                golden_nonce <= nonce - 32'd133; //32'd131;
 			else if (LOOP == 2)
 				golden_nonce <= nonce - 32'd66;
 			else
@@ -176,7 +176,7 @@ module fpgaminer_top (osc_clk, RxD, TxD
 	   
 `ifdef SIM
 		if (!feedback_d1)
-			$display ("nonce: %8x\nhash2: %64x\n", nonce, hash2);
+			$display ("nonce: %8x\nhash2: %64x\n", nonce-GOLDEN_NONCE_OFFSET-3, hash2);
 `endif
 	end
 
